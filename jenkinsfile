@@ -1,15 +1,23 @@
-pipeline {
+pipeline 
+{
     agent any
-    stages{
-        stage('clone'){
-            steps {
+    stages
+    {
+    
+        stage('clone')
+	{
+            steps 
+	    {
                 git branch: 'DEV', url: 'https://github.com/Venna12/raviLogin.git'     
             }        
         } 
-        stage('Build'){
-            steps {
-                sh 'mvn package'
+        stage('Build')
+	{
+            steps 
+	    {
+                sh 'mvn clean package'
             }
         }
-	}
+	
+    }
 }	
